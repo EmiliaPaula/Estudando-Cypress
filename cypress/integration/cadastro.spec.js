@@ -19,7 +19,8 @@ describe('cadastro', ()=> {
         bairro: 'Itaim Bibi',
         cidade_uf: 'São Paulo/SP'
       },
-      metodo_entrega: 'Moto'
+      metodo_entrega: 'Moto',
+      cnh: 'cnh-digital.jpg'
     }
 
     cy.get('input[name="nome"]').type(entregador.nome)
@@ -38,5 +39,13 @@ describe('cadastro', ()=> {
     cy.get('input[name="city-uf]').should('have.value', entregador.endereco.cidade_uf)
 
     cy.contains('.delivery-method li', entregador.metodo_entrega).click
+
+    cy.get('input[accept^="image"]').attachFile('/images/' + entregad.cnh)
   })
 })
+
+
+
+// **Para fazer upload de imagem, tive que baixar biblioteca para o cypress:
+//comando: npm install cypress-file-upload --save-dev
+//ir na pasta suport, arquivo index.js e add ** import 'cypress-file-upload' **

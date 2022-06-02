@@ -9,6 +9,7 @@
   "author": "Mihh Paula",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "cypress-file-upload": "^5.0.8"
   }
 }
