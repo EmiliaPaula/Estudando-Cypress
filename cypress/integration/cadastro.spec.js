@@ -41,6 +41,10 @@ describe('cadastro', ()=> {
     cy.contains('.delivery-method li', entregador.metodo_entrega).click
 
     cy.get('input[accept^="image"]').attachFile('/images/' + entregad.cnh)
+
+    const expectedMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois em breve retornaremos o contato.'
+    cy.get('.swal2-container .swal2-html-container')
+      .should('have.text', expectedMessage)
   })
 })
 
