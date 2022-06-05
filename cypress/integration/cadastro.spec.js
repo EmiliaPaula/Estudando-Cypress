@@ -6,41 +6,41 @@ describe('cadastro', ()=> {
     cy.get('a[href="/deliver"]').click()
     cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas')
 
-    var entregador = {
-      nome: 'Emília',
+    var delivery = {
+      name: 'Emília',
       cpf: '00000014141',
       email:'testando@hotmail.com',
       whatsapp:'11999999999',
-      endereco: {
-        cep: '04534011',
-        rua: 'Rua Joaquim Floriano',
-        numero: '1000',
-        complemento: 'Ap 142',
-        bairro: 'Itaim Bibi',
-        cidade_uf: 'São Paulo/SP'
+      address: {
+        postalcode: '04534011',
+        street: 'Rua Joaquim Floriano',
+        number: '1000',
+        details: 'Ap 142',
+        district: 'Itaim Bibi',
+        city_state: 'São Paulo/SP'
       },
-      metodo_entrega: 'Moto',
+      delivery_method: 'Moto',
       cnh: 'cnh-digital.jpg'
     }
 
-    cy.get('input[name="nome"]').type(entregador.nome)
-    cy.get('input[name="cpf"]').type(entregador.cpf)
-    cy.get('input[name="email"]').type(entregador.email)
-    cy.get('input[name="whatsapp"]').type(entregador.whatsapp)
+    cy.get('input[name="nome"]').type(delivery.name)
+    cy.get('input[name="cpf"]').type(delivery.cpf)
+    cy.get('input[name="email"]').type(delivery.email)
+    cy.get('input[name="whatsapp"]').type(delivery.whatsapp)
 
-    cy.get('input[name="postalcode"]').type(entregador.endereco.cep)
+    cy.get('input[name="postalcode"]').type(delivery.address.postalcode)
     cy.get('input[type="button"][value="Buscar CEP"]').click
 
-    cy.get('input[name="address-number]').type(entregador.endereco.numero)
-    cy.get('input[name="address-details]').type(entregador.endereco.complemento)
+    cy.get('input[name="address-number]').type(delivery.address.number)
+    cy.get('input[name="address-details]').type(delivery.address.details)
 
-    cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
-    cy.get('input[name="district"]').should('have.value', entregador.endereco.bairro)
-    cy.get('input[name="city-uf]').should('have.value', entregador.endereco.cidade_uf)
+    cy.get('input[name="address"]').should('have.value', delivery.address.street)
+    cy.get('input[name="district"]').should('have.value', delivery.address.district)
+    cy.get('input[name="city-uf]').should('have.value', delivery.address.city_state)
 
-    cy.contains('.delivery-method li', entregador.metodo_entrega).click
+    cy.contains('.delivery-method li', delivery.delivery_method).click
 
-    cy.get('input[accept^="image"]').attachFile('/images/' + entregad.cnh)
+    cy.get('input[accept^="image"]').attachFile('/images/' + delivery.cnh)
     cy.get('form button[type="submit"]').click()
 
     const expectedMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois em breve retornaremos o contato.'
@@ -55,41 +55,41 @@ describe('cadastro', ()=> {
     cy.get('a[href="/deliver"]').click()
     cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas')
 
-    var entregador = {
-      nome: 'Emília',
+    var delivery = {
+      name: 'Emília',
       cpf: '000000141AA',
       email:'testando@hotmail.com',
       whatsapp:'11999999999',
-      endereco: {
-        cep: '04534011',
-        rua: 'Rua Joaquim Floriano',
-        numero: '1000',
-        complemento: 'Ap 142',
-        bairro: 'Itaim Bibi',
-        cidade_uf: 'São Paulo/SP'
+      address: {
+        postalcode: '04534011',
+        street: 'Rua Joaquim Floriano',
+        number: '1000',
+        details: 'Ap 142',
+        district: 'Itaim Bibi',
+        city_state: 'São Paulo/SP'
       },
-      metodo_entrega: 'Moto',
+      delivery_method: 'Moto',
       cnh: 'cnh-digital.jpg'
     }
 
-    cy.get('input[name="nome"]').type(entregador.nome)
-    cy.get('input[name="cpf"]').type(entregador.cpf)
-    cy.get('input[name="email"]').type(entregador.email)
-    cy.get('input[name="whatsapp"]').type(entregador.whatsapp)
+    cy.get('input[name="nome"]').type(delivery.name)
+    cy.get('input[name="cpf"]').type(delivery.cpf)
+    cy.get('input[name="email"]').type(delivery.email)
+    cy.get('input[name="whatsapp"]').type(delivery.whatsapp)
 
-    cy.get('input[name="postalcode"]').type(entregador.endereco.cep)
+    cy.get('input[name="postalcode"]').type(delivery.address.postalcode)
     cy.get('input[type="button"][value="Buscar CEP"]').click
 
-    cy.get('input[name="address-number]').type(entregador.endereco.numero)
-    cy.get('input[name="address-details]').type(entregador.endereco.complemento)
+    cy.get('input[name="address-number]').type(delivery.address.number)
+    cy.get('input[name="address-details]').type(delivery.address.details)
 
-    cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
-    cy.get('input[name="district"]').should('have.value', entregador.endereco.bairro)
-    cy.get('input[name="city-uf]').should('have.value', entregador.endereco.cidade_uf)
+    cy.get('input[name="address"]').should('have.value', delivery.address.street)
+    cy.get('input[name="district"]').should('have.value', edelivery.address.district)
+    cy.get('input[name="city-uf]').should('have.value', delivery.address.city_state)
 
-    cy.contains('.delivery-method li', entregador.metodo_entrega).click
+    cy.contains('.delivery-method li', delivery.delivery_method).click
 
-    cy.get('input[accept^="image"]').attachFile('/images/' + entregad.cnh)
+    cy.get('input[accept^="image"]').attachFile('/images/' + delivery.cnh)
     cy.get('form button[type="submit"]').click()
 
     cy.get('.alert-error').should('have.text', 'Oops! CPF invalido')
