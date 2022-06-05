@@ -1,6 +1,9 @@
-import SignupPage from '../pages/SignupPage'
+import signup from '../pages/SignupPage'
 
 describe('cadastro', ()=> {
+
+  var signup = new SignupPage()
+
   it('Usuário de se tornar um entregador', ()=>{
 
     var deliver = {
@@ -19,8 +22,6 @@ describe('cadastro', ()=> {
       delivery_method: 'Moto',
       cnh: 'cnh-digital.jpg'
     }
-
-    var signup = new SignupPage()
 
     signup.go()
     signup.fillForm(deliver)
@@ -48,8 +49,6 @@ describe('cadastro', ()=> {
       delivery_method: 'Moto',
       cnh: 'cnh-digital.jpg'
     }
-
-    var signup = new SignupPage()
 
     signup.go()
     signup.fillForm(deliver)
